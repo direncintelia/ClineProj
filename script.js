@@ -28,14 +28,16 @@ const clickChart = new Chart(clickChartCanvas, {
 });
 
 clickButton.addEventListener('click', () => {
-  score++;
-  scoreSpan.textContent = score;
-
   const now = Date.now();
   let timeDiff = 0;
   if (!firstClick) {
     timeDiff = now - lastClickTime;
     timeBetweenClicksSpan.textContent = timeDiff;
+
+    if (timeDiff >= 900 && timeDiff <= 1100) {
+      score++;
+      scoreSpan.textContent = score;
+    }
 
     timeDiffs.push(timeDiff);
     clickChart.data.labels.push(timeDiffs.length);
