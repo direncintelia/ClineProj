@@ -3,6 +3,17 @@ body {
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  #clickButton {
+    padding: 8px 16px;
+    font-size: 18px;
+  }
+}
+
 #clickButton {
   padding: 10px 20px;
   font-size: 20px;
